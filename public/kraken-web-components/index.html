@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="custom-icons/style.css">
+    <script src="component-framework.js" ></script>
+    <style>
+      :root {
+        --primary_one-darker: #000
+      }
+        
+        html {
+            margin: 0
+        }
+
+        .container {
+            margin: 40px
+        }
+
+        .components {
+            margin: 20px;
+            display: flex;
+            float: left;
+        }
+
+        .info {
+            margin: 20px 40px 0 40px;
+            float: left;
+            width: 100%;
+        }
+
+        .title {
+            margin: 20px 40px;
+            width: 100%;
+            border: 1px solid var(--danger);
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 50px 20px 20px;
+            width: 30%;
+        }
+        .spacer {
+            margin: 20px 0
+        }
+
+        .section-title {
+            padding: 10px 0;
+            margin: 10px 0;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .spinner {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        .initials {
+          background: var(--gray);
+          border-radius: 50%;
+          width: 43px;
+          height: 43px;
+          padding: 10px;
+          font-family: 'Avenir-Medium';
+          color: var(--ink);
+          font-size: 16px;
+          letter-spacing: -2px;
+          margin-right: 0;
+        }
+
+          #initialsDropdown {
+            margin-left: 5px
+          }
+
+    </style>
+</head>
+<kn-web-masthead id="sampleMasthead"></kn-web-masthead>
+<body>
+    <div class="container">
+        <div class="kn-headline-42 title">Kraken Web Components</div>
+        <div class="info">Below is a list of available <span class="kn-bold">Kraken</span> web components. Open up this index.html file in a text editor to see a working example of each component.</div>
+        <div class="components">
+			<div class="column">
+                <div class="kn-headline-24 section-title">Navigation</div>
+				<kn-web-tabs id="exampleTabs" active-tab="0" max-width="300px"></kn-web-tabs>
+			</div>
+            <div class="column">
+                <div class="kn-headline-24 section-title">Fields and Controls</div>
+                <kn-web-accordion id="webAccordionExample" width="100%" auto-collapse="true" sub-title-inline="false" control-left-aligned="false" filled-background="false"></kn-web-accordion>
+                <div class="spacer"></div>
+                <kn-textbox name="example" label="Textbox"></kn-textbox>
+                <div class="spacer"></div>
+                <kn-textarea id="textareaComponentId" textarea-id="exampleTextarea" label="Textarea example" name="exampleTextarea" rows="5"></kn-textarea>
+                <div class="spacer"></div>
+                <kn-dropdown id="exampledropdown" label="single select dropdown" value="" name="exampledropdown"></kn-dropdown>
+                <div class="spacer"></div>
+                <kn-autocomplete id="searchboxComponentId" searchbox-id="exampleSearchbox" key-word="tags" placeholder="Sports..." name="'searchbox'"></kn-autocomplete> 
+                <div class="spacer"></div>
+                <kn-multi-select id="multiselectComponentId" component-id="multiSelect" label="Multi select" delimiter="; " component-width="350px" searchbox-placeholder="Search" display-placeholder="Select item(s)"></kn-multi-select>
+                <div class="spacer"></div>
+                <kn-radio-button id="radio1ComponentId" radio-id="radio1Id" label="First selection" value="1" name="radioGroup"></kn-radio-button> 
+                <br/>
+                <kn-radio-button id="radio2ComponentId" radio-id="radio2Id" label="Second selection" value="2" name="radioGroup" default-value="2"></kn-radio-button> 
+                <br/>
+                <kn-checkbox id="checkboxComponentId" checkbox-id="exampleCheckbox" label="Checkbox example" default-value="true" name="checkbox"></kn-checkbox> 
+            </div>
+            <div class="column">
+                <div class="kn-headline-24 section-title">Buttons</div>
+                <kn-button id="exampleButtonPrimComponentId" button-id="exampleButton" button-type="kn-primary" button-text="Primary Button"></kn-button>
+                <div class="spacer"></div>
+                <kn-button id="exampleButton" button-type="kn-primary" button-text="Button" loading="false"></kn-button>
+                <div class="spacer"></div>
+                <kn-button id="exampleButtonComponentId" button-type="kn-secondary" button-type="kn-primary" button-text="Secondary Button"></kn-button>
+                <div class="spacer"></div>
+                <kn-button id="exampleButtonComponentId" button-type="kn-tertiary" button-type="kn-primary" button-text="Tertiary Button"></kn-button>
+                <div class="spacer"></div>
+                <kn-button id="exampleButtonComponentId" button-type="kn-flat" button-type="kn-primary" button-text="Flat Button"></kn-button>
+                <div class="spacer"></div>
+                <kn-menu-button id="exampleMenuButtonCustomTemplate" button-type="kn-primary" button-text="Menu button custom template" custom-web-template="true"></kn-menu-button>
+                <div class="spacer"></div>
+                <kn-split-button id="exampleSplitButtonCustomTemplate" button-id="splitButtonTemplate" button-type="kn-primary" button-text="Custom template" custom-web-template="true"></kn-split-button>
+                <div class="spacer"></div>
+                <kn-icon-button id="exampleIconButtonComponentId" button-id="exampleButton" button-type="kn-primary" icon="fa-solid fa-circle-check"></kn-icon-button>
+                <div class="spacer"></div>
+                <kn-toggle id="toggleComponentId" toggle-id="exampleToggle" label="Example toggle switch" name="checkbox"></kn-toggle> 
+            </div>
+            <div class="column">
+                <div class="kn-headline-24 section-title">Dialogs</div>
+                <kn-tooltip id="tooltipExample"><span slot="content"><i class="fa-solid fa-circle-info kn-icon"></i></span></kn-tooltip>
+                <br/><br/>
+                <kn-button id="exampleModalBtn" button-id="exampleButton" button-type="kn-primary" button-text="Kraken modal"></kn-button>
+            </div>
+            <div class="column">
+                <div class="kn-headline-24 section-title">Notifications</div>
+                <div class="spinner"><kn-spinner id="spinnerExample" size="medium" is-loading="true"></kn-spinner></div>
+            </div>
+        </div>
+    </div>
+    
+    <kn-web-modal id="exampleModal" modal-id="myModal" title="Kraken Modal"></kn-web-modal>
+
+    <script>
+        //masthead
+        let masthead = document.querySelector('#sampleMasthead');
+        masthead.logo = `<img src='KrakenDS_Masthead_ProductLogo_Lighthouse.svg'>`
+        masthead.siteName = `Site name here`;
+        masthead.links = 
+        [
+          {name: 'link 1', url: 'C:/Code/lighthouse.designsystem/src/projects/components/web/index.html'},
+          {name: 'link 2', url: 'http://google.com'},
+          {name: 'link 3', url: 'http://google.com'},
+          {name: 'link 4', url: 'http://google.com'},
+          {name: 'link 5', url: 'http://google.com'}
+        ]
+
+        masthead.addEventListener('onOverflowMenuSelection', (e) => {
+          window.location.href = e.detail.url;
+        });
+
+        // setTimeout(() => {
+        //   let help = document.querySelector('#helpButton');
+        //   help.addEventListener('click', (e) => {
+        //     console.log('test')
+        //   });
+        // }, 100);
+
+        function helpBtnClick(e) {
+          console.log(e);
+        }
+
+        const rightNavContext = { helpClick: this.helpBtnClick.bind(this)};
+        masthead.rightNavContext = rightNavContext;
+
+        //Right side navigation 
+        masthead.rightNav = 
+        `<kn-button 
+          [buttonId]="'helpButton'" 
+          [buttonType]="'kn-pill'" 
+          [buttonText]="'Help'" 
+          [buttonIconLeft]="'fa-regular fa-circle-question'"
+          (btnClick)="context.helpClick($event)">
+        </kn-button>
+        <i class="fa-solid fa-bell kn-icon kn-icon-sm"></i>
+        <kn-icon-menu
+          [icon]="'fa-solid fa-gear'"
+          [dropdownRightAligned]="true"
+          [items]="['Link 1','Link 2']"
+          [dropdownCustomWidth]="'max-content'">
+        </kn-icon-menu>
+        <div class="kn-pipe"></div>
+        <div class="initials">K N</div>
+        <kn-icon-menu
+          id="test"
+          [id]="'initialsDropdown'"
+          [icon]="'fa-regular fa-chevron-down'"
+          [dropdownRightAligned]="true"
+          [items]="['Link 1','Link 2', 'Link 3']"
+          [animateIcon]="true"
+          [dropdownCustomWidth]="'max-content'">
+        </kn-icon-menu>`
+        
+        
+
+        //spinner
+         let spinner = document.querySelector('#spinnerExample');
+         spinner.isLoading = true;
+
+        //tooltip
+        let tooltipExample = document.querySelector('#tooltipExample');
+        tooltipExample.tooltip = "This is a <span class='kn-bold'>tooltip</span>";
+        tooltipExample.direction = "top";
+
+        //Primary button click event
+        const el = document.querySelector('#exampleButtonPrimComponentId');
+        el.addEventListener('btnClick', (e) => {
+        console.log(e)
+        });
+        
+        //Accordion
+		let accordion = document.querySelector("#webAccordionExample");
+		let accItems = 
+		[
+			{
+                "id": "title1", 
+                "title": "Title",
+                "subTitle":"Subtitle",
+                "icon":"fa-solid fa-gear kn-icon-sm",
+                "disabled": false,
+                "content": `<div class="acc-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book. 
+                </div>`
+            },
+            {
+                "id": "title2", 
+                "title": "Title",
+                "subTitle":"Subtitle",
+                "icon":"fa-solid fa-gear kn-icon-sm",
+                "disabled": false,
+                "subHeader": [
+                    { "id": "subHeader3", "title": "Nested title", "content": `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`, "disabled": false, },
+                    { 
+                        "id": "subHeader4", 
+                        "title": "Nested title", 
+                        "disabled": false,
+                        "content": "<label>Nested title</label>"
+                    }
+                ]
+            }
+		]
+
+		accordion.accordionItems = accItems;
+
+        //Bind to the accordion's click event 
+        accordion.addEventListener('onSelect', (event) => console.log(event.detail));
+
+		//tabs
+		let tabObject = 
+		[
+			{'title': 'tab 1' },
+			{'title': 'tab 2'},
+			{'title': 'tab 3'},
+			{'title': 'tab 4', 'disabled': true}
+		]
+		let tabContainer = document.querySelector('#exampleTabs');
+		let knTab = document.querySelector('#exampleTabs kn-tabs');
+		
+		//set the tab names
+		tabContainer.tabList = tabObject;
+		
+		//set the tab content, order is important as its in the same order as the tab names above
+		let tabContent = document.querySelectorAll('#exampleTabs kn-tab .kn-tab-content');
+		tabContent[0].innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+		tabContent[1].innerHTML = "Imperdiet dui accumsan sit amet nulla facilisi morbi.";
+		tabContent[2].innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Imperdiet dui accumsan sit amet nulla facilisi morbi.";
+		tabContent[3].innerHTML = "<div class=\"img-container\"><img class=\"kn-responsive-img\" src=\"lighthouse_logo.png\"></div>"; 
+		
+    //bind to the tab click event 
+    tabContainer.addEventListener('onSelect', (event) => console.log(event.detail));
+
+    //single select dropdown 
+    let arr = ['item 1','item 2','item 3'];
+    let drpdn = document.querySelector('#exampledropdown');
+    drpdn.items = arr;
+
+    //menu button custom template
+    let menuBtnCustomDropdown = document.querySelector('#exampleMenuButtonCustomTemplate');
+    let menuBtnDropdownTemplate = menuBtnCustomDropdown.querySelector('.kn-dropdown');
+    menuBtnDropdownTemplate.innerHTML = `
+    <div class='kn-dropdown-item'>item 1</div>
+    <div class='kn-dropdown-item'>item 2</div>
+    <div class='kn-dropdown-item'>item 3</div>`
+
+
+    //split button custom template
+    let splitBtnDropdown = document.querySelector('#exampleSplitButtonCustomTemplate');
+    let splitBtnDropdownTemplate = splitBtnDropdown.querySelector('.kn-dropdown');
+    splitBtnDropdownTemplate.innerHTML = `
+    <div class='kn-dropdown-item'>item 1</div>
+    <div class='kn-dropdown-item'>item 2</div>
+    <div class='kn-dropdown-item'>item 3</div>`
+    
+    //radio on select event listener
+    const radioOnSelect = document.getElementById('radio1ComponentId');
+    radioOnSelect.addEventListener('onSelect', (event) => console.log(event.detail));
+    
+    //multi select dropdown
+    let personObj = 
+		[
+			{id: 0, name:"John Doe", role:"Product Manager", tags: 'john, doe, product, manager'},
+			{id: 1, name:"Joe Smith", role:"Developer", tags: 'joe, smith, developer'},
+			{id: 2, name:"Rick James", role:"IT Manager", tags: 'rick, james, manager', selected: true},
+			{id: 3, name:"Bobby Knight", role:"Developer", tags: 'bobby, knight, developer'}
+        ]
+
+        const multiselectFields = { text: 'name', value: 'id'};
+
+        let multiselect = document.querySelector("#multiselectComponentId");
+        multiselect.fields = multiselectFields;
+        multiselect.data = personObj;
+
+      //search box
+      let searchItemsObj = 
+      [
+        {sport: 'football', value: 1, tags: 'football, ball, tackle, gridiron'},
+        {sport: 'baseball', value: 1, tags: 'baseball, ball, bat, park'},
+        {sport: 'hockey', value: 1, tags: 'hockey, puck, skates'},
+        {sport: 'soccer', value: 1, tags: 'soccer, ball, field'}
+      ]
+
+      const searchbFields = { text: 'sport', value: 'value'};
+
+      let searchbox = document.querySelector("#searchboxComponentId");
+      searchbox.fields = searchbFields;
+      searchbox.data = searchItemsObj;
+      
+      //modal
+      let modalBtn = document.querySelector('#exampleModalBtn');
+      let modal = document.querySelector('#exampleModal');
+      modalBtn.addEventListener('btnClick', (e) => {
+          modal.open = true;
+      });
+
+      //close modal
+      function modalCloseFunction() {
+          modal.open = false;
+      }
+
+      const contextObj = { closeModal: this.modalCloseFunction.bind(this) };
+      modal.context = contextObj;
+      modal.content = 
+        `<div class="inner-container">
+  <div class="kn-modal-panel">
+    <div class="kn-modal-row">
+      <div class="kn-textbox-field">
+        <kn-textbox 
+          [textboxId]="'exampleTextbox3'" 
+          [label]="'Label text'" 
+          [name]="'textboxName3'">
+        </kn-textbox>
+      </div>
+      <div class="kn-textbox-field">
+        <kn-textbox 
+          [textboxId]="'exampleTextbox4'" 
+          [label]="'Label text'" 
+          [name]="'textboxName4'">
+        </kn-textbox>
+      </div>
+    </div>
+    <div class="kn-modal-row">
+      <div class="kn-textbox-field">
+        <kn-textbox 
+          [textboxId]="'exampleTextbox5'" 
+          [label]="'Label text'" 
+          [name]="'textboxName5'">
+        </kn-textbox>
+      </div>
+      <div class="kn-textbox-field">
+        <kn-textbox 
+          [textboxId]="'exampleTextbox6'" 
+          [label]="'Label text'"  
+          [name]="'textboxName6'">
+        </kn-textbox>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="kn-modal-footer">
+  <div class="col-right">
+    <kn-button 
+      [buttonId]="'cancelButton'" 
+      [buttonType]="'kn-flat'" 
+      [buttonText]="'Cancel'" 
+      (btnClick)="context.closeModal()">
+    </kn-button>
+    <kn-button 
+      [buttonId]="'actionButton'" 
+      [buttonType]="'kn-primary'" 
+      [buttonText]="'Action'">
+    </kn-button>
+  </div>
+</div>`
+
+
+let help = document.querySelector('#helpButton');
+help.addEventListener('click', (e) => {
+
+});
+    </script>
+</body>
+</html>
+ 
+
+

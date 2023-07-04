@@ -1,0 +1,55 @@
+Changelog for Kraken Web Components
+
+Version: 1.1.0
+Date: April 1, 2023
+
+-----------------------------------
+
+Tabs 1 v1.0.0
+    * Created the tabs component
+
+
+Version: 1.0.0
+Date: March 1, 2023
+
+-----------------------------------
+
+Action button 1 v1.0.0
+    * Created the action button component
+
+Icon button v1.0.0
+    * Created the icon button component
+
+Menu button v1.0.0
+    * Created the menu button component
+
+Split button v1.0.0
+    * Created the split button component
+
+Checkbox v1.0.0
+    * Created the checkbox component
+
+Single select dropdown v1.0.0
+    * Created the single-select dropdown component
+
+Multi select dropdown v1.0.0
+    * Created the multi-select dropdown component
+
+Radio button 1 v1.0.0
+    * Created the radio button component
+
+Search box v1.0.0
+    * Created the search box component
+
+Text area v1.0.0
+    * Created the text area component
+
+Textbox v1.0.0
+    * Created the textbox button component
+
+Toggle switch v1.0.0
+    * Created the toggle switch component
+
+Tooltip v1.0.0
+    * Created the tooltip component
+
