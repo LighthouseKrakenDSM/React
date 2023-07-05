@@ -144,48 +144,55 @@
     
     <kn-web-modal id="exampleModal" modal-id="myModal" title="Kraken Modal"></kn-web-modal>
 
+    <kn-web-footer id="footerExample" sticky="true"></kn-web-footer>
     <script>
+        //footer
+        let footer = document.querySelector('#footerExample');
+        setTimeout(() => {
+          footer.rightNav =
+          `<a id="footerLink1" class="kn-quiet-link">Link 1</a>
+          <a id="footerLink2" class="kn-quiet-link">Link 2</a>
+          <a id="footerLink3" class="kn-quiet-link">Link 3</a>` 
+        }, 100);
         //masthead
         let masthead = document.querySelector('#sampleMasthead');
         masthead.logo = `<img src='KrakenDS_Masthead_ProductLogo_Lighthouse.svg'>`
         masthead.siteName = `Site name here`;
         masthead.links = 
         [
-          {name: 'link 1', url: 'C:/Code/lighthouse.designsystem/src/projects/components/web/index.html'},
-          {name: 'link 2', url: 'http://google.com'},
-          {name: 'link 3', url: 'http://google.com'},
-          {name: 'link 4', url: 'http://google.com'},
-          {name: 'link 5', url: 'http://google.com'}
+          {id: 'exampleLink1', name: 'link 1', url: 'C:/Code/lighthouse.designsystem/src/projects/components/web/index.html'},
+          {id: 'exampleLink2', name: 'link 2', url: '/'},
+          {id: 'exampleLink3', name: 'link 3', url: 'http://google.com'},
+          {id: 'exampleLink4', name: 'link 4', url: 'http://yahoo.com'},
+          {id: 'exampleLink5', name: 'link 5'} //you can bind a click event by removing the "url" property
         ]
 
         masthead.addEventListener('onOverflowMenuSelection', (e) => {
           window.location.href = e.detail.url;
         });
 
-        // setTimeout(() => {
-        //   let help = document.querySelector('#helpButton');
-        //   help.addEventListener('click', (e) => {
-        //     console.log('test')
-        //   });
-        // }, 100);
+        setTimeout(() => {
+          const link5 = document.querySelector('#exampleLink5');
+          link5.addEventListener('click', (e) => {
+            console.log('link 5 clicked!');
+          });
+        }, 100);
 
         function helpBtnClick(e) {
-          console.log(e);
+          //some code here...
+          console.log(e)
         }
 
-        const rightNavContext = { helpClick: this.helpBtnClick.bind(this)};
-        masthead.rightNavContext = rightNavContext;
+        // const rightNavContext = { helpClick: this.helpBtnClick.bind(this)};
+        // masthead.rightNavContext = rightNavContext;
 
         //Right side navigation 
+        setTimeout(() => {
+          
+        
         masthead.rightNav = 
-        `<kn-button 
-          [buttonId]="'helpButton'" 
-          [buttonType]="'kn-pill'" 
-          [buttonText]="'Help'" 
-          [buttonIconLeft]="'fa-regular fa-circle-question'"
-          (btnClick)="context.helpClick($event)">
-        </kn-button>
-        <i class="fa-solid fa-bell kn-icon kn-icon-sm"></i>
+        `<i id="helpButton" class="fa-solid fa-circle-question kn-icon kn-icon-md" title="This is a tooltip"></i>
+        <i title="test tool tip" class="fa-solid fa-bell kn-icon kn-icon-md"></i>
         <kn-icon-menu
           [icon]="'fa-solid fa-gear'"
           [dropdownRightAligned]="true"
@@ -203,8 +210,8 @@
           [animateIcon]="true"
           [dropdownCustomWidth]="'max-content'">
         </kn-icon-menu>`
-        
-        
+      }, 100);
+
 
         //spinner
          let spinner = document.querySelector('#spinnerExample');
@@ -409,10 +416,10 @@
 </div>`
 
 
-let help = document.querySelector('#helpButton');
-help.addEventListener('click', (e) => {
+// let help = document.querySelector('#helpButton');
+// help.addEventListener('click', (e) => {
 
-});
+// });
     </script>
 </body>
 </html>
